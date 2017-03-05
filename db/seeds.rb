@@ -17,14 +17,14 @@ u.save
 
 
 Product.create!(title: "爱似流星",
-                 description: “10cun”,
+                 description: “寸”,
                  price: 228,
                  quantity: 10,
                  categories: "奶油系列"
                  )
 
 Product.create!(title: "甜蜜",
-                 description: “10cun”,
+                 description: “寸”,
                  price: 228,
                  quantity: 10,
                  categories: "奶油系列"
