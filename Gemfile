@@ -37,6 +37,8 @@ gem 'mini_magick'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'figaro'
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -64,4 +66,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'pg'
-end 
+end
