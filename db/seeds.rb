@@ -27,3 +27,29 @@ Product.create!(title: "甜蜜",
                  quantity: 10,
                  categories: "奶油系列"
                  )
+
+
+Product.create!(title: "爱的乐园",
+                 price: 228,
+                 quantity: 10,
+                 categories: "水果系列"
+                 )
+
+Product.create!(title: "缤纷盛果",
+                 price: 228,
+                 quantity: 10,
+                 categories: "水果系列"
+                 )
+
+
+Product.create!(title: "德式黑森林",
+                 price: 228,
+                 quantity: 10,
+                 categories: "巧克力系列"
+                 )
+
+Product.create!(title: "金色烂漫",
+                 price: 228,
+                 quantity: 10,
+                 categories: "水果系列"
+                 )
