@@ -14,12 +14,3 @@ u.password_confirmation = "010101"
 
 u.is_admin = true
 u.save
-
-
-
-Product.create!(title: "Cake",
-                description: "Super Delicious",
-                price: 280,
-                quantity: 10,
-                image: open("http://celebdear.com/wp-content/uploads/2017/01/0020236_choco_velvette_cake-2.jpeg"),
-                )

@@ -1,0 +1,54 @@
+
+
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand"><a href="/" style="color:black; font-size: 17px;">蛋糕分类</a></li>
+
+        <li><a href="/naiyou">奶油系列</a></li>
+        <li><a href="/zhishi">芝士系列</a></li>
+        <li><a href="/musi">慕斯系列</a></li>
+        <li><a href="/qiaokeli">巧克力系列</a></li>
+        <li><a href="/shuiguo">水果系列</a></li>
+        <li><a href="/bingjiling">冰激凌系列</a></li>
+        <li><a href="/qingdian">庆典系列</a></li>
+    </ul>
+
+
+<!-- category -->
+
+<!-- products -->
+
+
+
+<div class="row" style="margin-top:100px;">
+  <div class="col-md-12">
+
+<% Product.all.each do |product| %>
+
+    <% if product.image.present? %>
+      <%= image_tag(product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2> <%= product.title %> </h2>
+    <div style="height:100px;">
+      <p>
+        <%= product.description %>
+      </p>
+    </div>
+    <div> 数量 : <%= product.quantity %> </div>
+    <div class="product-price"> ￥ <%= product.price %> </div>
+    <div class="pull-right">
+      <% if product.quantity.present? && product.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+    </div>
+
+  <% end %>
+
+  </div>
+</div>

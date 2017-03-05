@@ -1,0 +1,23 @@
+
+
+                  <div class="row" style="margin-top:100px;margin-bottom:300px;">
+                      <% if  @products.present? %>
+                        <% @products.order('created_at DESC').each do |product| %>
+                        <% if  true == product.categories.eql?("慕斯系列")%>
+                        <li>
+                            <%= link_to product_path(product) do %>
+                            <% if product.image.present? %>
+                            <span class="thumb"><%= image_tag(product.image.thumb.url)%></span>
+                        <% else %>
+                            <span class="thumb"><%=image_tag("http://placehold.it/200x200&text=No Pic") %>
+                            </span>
+                        <% end %>
+                            <span class="name"><%=product.title%></span>
+                            <span class="name">￥
+                            <%=product.price%></span>
+                            <% end %>
+                        </li>
+                        <% end %>
+                        <% end %>
+                     <% end %>
+                  </div>
