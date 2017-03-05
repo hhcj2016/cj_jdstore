@@ -75,16 +75,6 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
-    logger.formatter = config.log_formatter
-    config.logger = ActiveSupport::TaggedLogging.new(logger)
-  end
-
-  # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
-end
-
 
   config.action_mailer.default_url_options = { :host => 'https://polar-beyond-54017.git.herokuapp.com'}
 
@@ -98,3 +88,15 @@ end
     user_name: ENV["SEND_CLOUD_USER_NAME"],
     password: ENV["SEND_CLOUD_USER_KEY"]
     }
+
+
+
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
+  end
+
+  # Do not dump schema after migrations.
+  config.active_record.dump_schema_after_migration = false
+end
