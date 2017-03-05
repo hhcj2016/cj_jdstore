@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title>蜜糖:每一口都更甜蜜</title>
+
+
+<script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--<link rel="stylesheet" type="text/css" href="/css/style.css" /> -->
+
+
+<style type="text/css">
+.navbar-default{display: none;}
+</style>
+
+
+</head>
+
+<!-- Navbar-->
+
+
+
+<div class="row" style="margin-top: -1px;">
+
+
+<div class="topbar">
+<div class="topbody">
+    <a class="title" href="/">HoneyCake</a>
+    <ul class="toplist">
+        <li class="active">
+            <%= link_to("全部蛋糕", products_path) %>
+        </li>
+        <!-- search start-->
+        <li>
+            <%= form_tag products_path, :method => "get" do %>
+                <div class="searchform">
+                    <%= text_field_tag :search, params[:search], placeholder: "搜索", class: "searchbox"%>
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default search-bar-submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to carts_path do  %>
+                购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+           <% end %>
+        </li>
+        <% if !current_user %>
+            <li><%= link_to("注册", new_user_registration_path) %> </li>
+            <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+        <% else %>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Hi!, <%= current_user.email %>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <% if current_user.admin? %>
+                        <li>
+                            <%= link_to("Admin 选单", admin_products_path ) %>
+                        </li>
+                    <% end %>
+
+                    <li>
+                        <%= link_to("个人订单列表", account_orders_path ) %>
+                    </li>
+                    <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                </ul>
+            </li>
+        <% end %>
+    </ul>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+<!-- Navbar-->
+<!-- Carousel -->
+
+
+
+
+<div id="myCarousel" class="carousel" style="margin-top:40px;">
+    <!--第一步：设计轮播图片的容器。-->
+    <!--            #slidershow 层添加 slide 样式，使用图片与图片切换效果有平滑感-->
+    <ol class="carousel-indicators">
+        <!--第二步：设计轮播图片计数器。-->
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+<div class="row">
+
+
+
+        <div class="carousel-inner">
+            <!--第三步：设计轮播图片播放区,使用 carousel-inner 样式来控制-->
+            <div class="item active">
+                <img src="https://ww4.sinaimg.cn/large/006tNbRwly1fczjte364bj30rs0b4q7s.jpg" alt="First slide"  class="img-responsive">
+                <div class="carousel-caption">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://ww4.sinaimg.cn/large/006tNbRwly1fczks6uiiwj30rs0b4wml.jpg" alt="Second slide"  class="img-responsive">
+                <div class="carousel-caption">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://ww3.sinaimg.cn/large/006tNbRwly1fczkuqobf9j30rs0b40z3.jpg" alt="Third slide"  class="img-responsive">
+                <div class="carousel-caption">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://ww3.sinaimg.cn/large/006tNbRwly1fczjozlsp8j30rs0b4qbq.jpg" alt="Fourth slide"  class="img-responsive">
+                <div class="carousel-caption">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--时间变量--->
+    <script>
+        $('.carousel').carousel({interval: 3500})
+    </script>
+
+</div>
+
+
+<!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>-->
+<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
+
+<!-- Carousel -->
+
+<!-- category -->
+
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand"><a href="/" style="color:black; font-size: 17px;">蛋糕分类</a></li>
+
+        <li><a href="/naiyou">奶油系列</a></li>
+        <li><a href="/zhishi">芝士系列</a></li>
+        <li><a href="/musi">慕斯系列</a></li>
+        <li><a href="/qiaokeli">巧克力系列</a></li>
+        <li><a href="/shuiguo">水果系列</a></li>
+        <li><a href="/bingjiling">冰激凌系列</a></li>
+        <li><a href="/qingdian">庆典系列</a></li>
+    </ul>
+
+
+<!-- category -->
+
+<!-- products -->
+
+
+
+<div class="row" style="margin-top:100px;">
+  <div class="col-md-12">
+
+<% Product.all.each do |product| %>
+
+    <% if product.image.present? %>
+      <%= image_tag(product.image.medium.url, class: "thumbnail") %>
+    <% else %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h2> <%= product.title %> </h2>
+    <div style="height:100px;">
+      <p>
+        <%= product.description %>
+      </p>
+    </div>
+    <div> 数量 : <%= product.quantity %> </div>
+    <div class="product-price"> ￥ <%= product.price %> </div>
+    <div class="pull-right">
+      <% if product.quantity.present? && product.quantity > 0 %>
+        <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
+      <% else %>
+        已销售一空，无法购买
+      <% end %>
+    </div>
+
+  <% end %>
+
+  </div>
+</div>
+
+
+
+
+<!-- products -->
+
+
+
+
+
+</html>

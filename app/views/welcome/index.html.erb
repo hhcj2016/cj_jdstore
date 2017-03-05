@@ -8,7 +8,6 @@
 
 
 
-
 <style type="text/css">
 .navbar-default{display: none;}
 </style>
@@ -17,7 +16,6 @@
 </head>
 
 <!-- Navbar-->
-
 
 
 <div class="row" style="margin-top: -1px;">
@@ -75,14 +73,14 @@
 </div>
 </div>
 
-
-
+</div>
 
 
 
 </div>
 <!-- Navbar-->
 <!-- Carousel -->
+
 
 
 
@@ -109,50 +107,61 @@
 <!-- category -->
 
 <!-- products -->
+<!-- list -->
 
 
 
-
-<div class="row" style="margin-top:100px;">
-  <div class="col-md-6">
-
-<% Product.all.each do |product| %>
-
-    <% if product.image.present? %>
-      <%= image_tag(product.image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
-  </div>
-  <div class="col-md-6">
-    <h2> <%= product.title %> </h2>
-    <div style="height:100px;">
-      <p>
-        <%= product.description %>
-      </p>
+<<div class="container">
+    <div class="well well-sm">
+        <strong>Display</strong>
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+                </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                class="glyphicon glyphicon-th"></span>Grid</a>
+        </div>
     </div>
-    <div> 数量 : <%= product.quantity %> </div>
-    <div class="product-price"> ￥ <%= product.price %> </div>
-    <div class="pull-right">
-      <% if product.quantity.present? && product.quantity > 0 %>
-        <%= link_to("加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-      <% else %>
-        已销售一空，无法购买
-      <% end %>
+    <div id="products" class="row list-group">
+        <% Product.all.each do |product| %>
+            <div class="item  col-xs-4 col-lg-4">
+                <div class="thumbnail">
+                    <%= link_to product_path(product) do %>
+                        <% if product.image.present? %>
+                            <%= image_tag(product.image, class: "group list-group-image") %>
+                        <% else %>
+                            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                        <% end %>
+                    <%end%>
+                    <div class="caption">
+                        <h4 class="group inner list-group-item-heading">
+                            <%= product.title %></h4>
+
+                            <br>
+
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <p class="lead">
+                                    ¥<%= product.price %></p>
+                            </div>
+                            <div class="col-xs-6 col-md-6 ">
+                                <div class="simpleCart_shelfItem">
+                                    <p><%= link_to("Add to cart", add_to_cart_product_path(product),  :method => :post, class:"item_add")%></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
     </div>
-
-  <% end %>
-
-  </div>
 </div>
 
 
 
 
-<!-- products -->
+<!-- list -->
 
 
-
+</body>
 
 
 </html>

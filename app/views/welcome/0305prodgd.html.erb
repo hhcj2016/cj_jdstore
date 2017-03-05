@@ -1,0 +1,50 @@
+<!-- list -->
+
+
+
+<<div class="container">
+    <div class="well well-sm">
+        <strong>Display</strong>
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+                </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                class="glyphicon glyphicon-th"></span>Grid</a>
+        </div>
+    </div>
+    <div id="products" class="row list-group">
+        <% Product.all.each do |product| %>
+            <div class="item  col-xs-4 col-lg-4">
+                <div class="thumbnail">
+                    <%= link_to product_path(product) do %>
+                        <% if product.image.present? %>
+                            <%= image_tag(product.image, class: "group list-group-image") %>
+                        <% else %>
+                            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                        <% end %>
+                    <%end%>
+                    <div class="caption">
+                        <h4 class="group inner list-group-item-heading">
+                            <%= product.title %></h4>
+
+                            <br>
+
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <p class="lead">
+                                    ¥<%= product.price %></p>
+                            </div>
+                            <div class="col-xs-6 col-md-6 ">
+                                <div class="simpleCart_shelfItem">
+                                    <p><%= link_to("Add to cart", add_to_cart_product_path(product),  :method => :post, class:"item_add")%></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+
+<!-- list -->
