@@ -30,6 +30,3 @@ Product.create!(title: "Cake",
                                   image: open("http://celebdear.com/wp-content/uploads/2017/01/0020236_choco_velvette_cake-2.jpeg"),
                                   categories: "Chocolate"
                                   )
-
-
-                                  
