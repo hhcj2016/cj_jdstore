@@ -20,42 +20,5 @@ PProduct.create!(title: "爱似流星",
                  description: “10寸”,
                  price: 228,
                  quantity: 10,
-                 categories: "奶油系列",
-                 )
-
-Product.create!(title: "甜蜜",
-                 description: “10寸”,
-                 price: 228,
-                 quantity: 10,
-                 categories: "奶油系列",
-                 )
-
-
-Product.create!(title: "爱的乐园",
-                 description: “10寸”,
-                 price: 228,
-                 quantity: 10,
-                 categories: "水果系列",
-                 )
-
-Product.create!(title: "缤纷盛果",
-                 description: “10寸”,
-                 price: 228,
-                 quantity: 10,
-                 categories: "水果系列",
-                 )
-
-
-Product.create!(title: "德式黑森林",
-                 description: “10寸”,
-                 price: 228,
-                 quantity: 10,
-                 categories: "巧克力系列",
-                 )
-
-Product.create!(title: "金色烂漫",
-                 description: “10寸”,
-                 price: 228,
-                 quantity: 10,
-                 categories: "水果系列",
+                 categories: "奶油系列"
                  )
