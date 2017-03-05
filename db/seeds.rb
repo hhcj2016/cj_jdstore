@@ -14,3 +14,11 @@ u.password_confirmation = "010101"
 
 u.is_admin = true
 u.save
+
+
+Product.create!(title: "爱似流星",
+                 description: "10寸",
+                 price: 238,
+                 quantity: 10,
+                 image: open("")
+                 )
