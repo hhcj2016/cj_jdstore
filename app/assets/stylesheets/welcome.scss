@@ -16,6 +16,25 @@
   width: 100%;
 }
 
+.sidebar-nav {
+    position: fixed;
+    top: 100px;
+    width: 120px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #0da5ed;
+    height:400px;
+}
+
+
+.sidebar-nav li a {
+    display: block;
+    color: #fcf1c2;
+    text-decoration: none;
+    padding: 10px 15px 10px 30px;
+    font-size: 15px;
+}
 
 
 
@@ -111,12 +130,4 @@ footer{position:absolute;width:100%;height:100px;padding:0 0 10px 0;right:0;}
  .topbody .title :focus{
     color:  #FFFFFF;//鼠标放置title上的文字颜色  还是不对
     text-decoration: underline;
-}
-
-
-// 适应小屏幕
-@media (max-width: 1200px) {
-	.lp-banner {
-		height: 460px;
-	}
 }
