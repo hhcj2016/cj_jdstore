@@ -35,6 +35,8 @@
     font-size: 15px;
 }
 
+
+
 .sidebar-nav li a:hover,
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus,
@@ -125,7 +127,7 @@ footer{position:absolute;width:100%;height:100px;padding:0 0 10px 0;right:0;}
   .topbody .toplist a {
      color: #FF69B4;//HEADER右边字体颜色
      text-decoration: none;
-     font-size: 14px;
+     font-size: 15px;
  }
 
   .topbody .toplist > li > a:hover,
@@ -135,8 +137,8 @@ footer{position:absolute;width:100%;height:100px;padding:0 0 10px 0;right:0;}
  }
 
 
- .topbody .title :hover，
- .topbody .title :focus{
+.title :hover，
+.title :focus{
     color:  #FFFFFF;//鼠标放置title上的文字颜色  还是不对
     text-decoration: underline;
 }
