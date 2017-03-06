@@ -24,7 +24,7 @@
     padding: 0;
     list-style: none;
     background-color: #0da5ed;
-    height:400px;
+    height:360px;
 }
 
 .sidebar-nav li a {
@@ -35,7 +35,16 @@
     font-size: 16px;
 }
 
-
+.sidebar-nav li a:hover,
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus,
+.sidebar-nav li.open a:hover,
+.sidebar-nav li.open a:active,
+.sidebar-nav li.open a:focus{
+    color: white;
+    text-decoration: none;
+    background-color: #ed1b5c
+}
 
 
 html{height:100%;}
