@@ -28,7 +28,7 @@
         <li class="active">
             <%= link_to("全部蛋糕", products_path) %>
         </li>
-        <!-- search -->
+        <!-- search start-->
         <li>
             <%= form_tag products_path, :method => "get" do %>
                 <div class="searchform">
@@ -41,7 +41,6 @@
                 </div>
             <% end %>
         </li>
-        <!-- search -->
         <li>
             <%= link_to carts_path do  %>
                 购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
