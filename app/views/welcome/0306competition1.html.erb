@@ -193,7 +193,7 @@
   </div>
 
     <div id="products" class="row list-group" style="padding: 10px;20px;10px;20px;">
-        <% Product.all.first(6).each do |product| %>
+        <% Product.all.each do |product| %>
             <div class="item  col-xs-4 col-lg-4">
                 <div class="thumbnail">
                     <%= link_to product_path(product) do %>
