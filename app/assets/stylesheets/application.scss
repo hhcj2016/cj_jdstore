@@ -18,6 +18,14 @@
 @import "font-awesome";
 
 
+body{min-height:100%;margin:0;padding:0px 0 0px 0;position:relative;}
+footer{position:absolute;width:100%;height:100px;padding:0 0 10px 0;right:0;}
+
+a:hover, a:focus {
+  color: #FFF;//鼠标放置title上的文字颜色
+  text-decoration: underline;
+}
+
 .navbar-default {
     background-color: #464140;//header底色
     border-color: #464140;//边框色
