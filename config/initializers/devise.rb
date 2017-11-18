@@ -7,6 +7,9 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'c0331478b5d7bc76c0c9670ed0cfb98015e9aac01af2b7ba3933c38ae213f5866842a6818b617bc070104415929de16f5d9fc0d2d5c3f0330bbbd6cef144f403'
+   #?config.secret_key = ENV['DEVISE_SECRET_KEY'] if Rails.env.production?
+   config.secret_key = '5bdbeca7d82e10409b51290bcdc1e085a42996cbc5d316981ccbe87e44036e59270f71ed286c407ba2fffc249a47f37f9abf304061b03daa9b0e6a29a1c8fc4e'
+
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -272,6 +275,6 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-config.secret_key = ENV['DEVISE_SECRET_KEY'] if Rails.env.production?
+
 
 end
